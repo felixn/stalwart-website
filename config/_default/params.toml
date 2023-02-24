@@ -87,7 +87,7 @@ editPage = true
 lastMod = false
 
 [sections]
-  sectionNav = ["jmap", "imap"]
+  sectionNav = ["jmap", "imap", "smtp"]
 
 [options]
   lazySizes = true

@@ -4,11 +4,17 @@
   identifier = "jmap"
   url = "/jmap/"
 
-[[jmap]]
+[[imap]]
   name = "IMAP"
   weight = 20
   identifier = "imap"
   url = "/imap/"
+
+[[smtp]]
+  name = "SMTP"
+  weight = 30
+  identifier = "smtp"
+  url = "/smtp/"
 
 [[main]]
   name = "JMAP"
@@ -19,6 +25,11 @@
   name = "IMAP"
   url = "/imap/"
   weight = 20
+
+[[main]]
+  name = "SMTP"
+  url = "/smtp/"
+  weight = 30
 
 [[social]]
   name = "GitHub"

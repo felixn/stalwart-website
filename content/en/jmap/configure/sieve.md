@@ -9,7 +9,7 @@ type: docs
 menu:
   jmap:
     parent: "configure"
-    identifier: "rate-limit"
+    identifier: "sieve"
 weight: 210
 toc: true
 ---

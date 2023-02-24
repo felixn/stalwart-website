@@ -63,6 +63,10 @@
           </li>
 
           <li class="nav-item">
+            <a href="/smtp" class="nav-link scroll">SMTP</a>
+          </li>
+
+          <li class="nav-item">
             <a href="https://stalwartlabs.medium.com/" target="_blank" class="nav-link scroll">Blog</a>
           </li>
 
@@ -121,11 +125,10 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#imap" class="btn-platform">
-
+                  <a href="#smtp" class="btn-platform">
                     <div class="btn-platform-area">
                       <span> Stalwart </span>
-                      IMAP Server
+                      SMTP Server
                     </div>
                   </a>
                 </li>
@@ -309,6 +312,49 @@
             </div>
           </div>
         </div>
+        <div class="row align-items-center" id="smtp">
+          <div class="col-lg-6">
+            <div class="feature-image">
+              <img src="/images/shape-01.svg" class="feature-image-shape1" style="left: -25%; top: 10%;"
+                alt="feature-image-shape" />
+              <img src="/images/empty.svg" alt="feature-image" />
+
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="feature-content ml-25">
+              <h2>
+                Stalwart SMTP
+              </h2>
+              <p>
+                Stalwart SMTP is a modern SMTP server developed in Rust with a focus on security, speed, and extensive
+                configurability.
+              </p>
+              <div class="feature-content-list">
+                <ul>
+                  <li>
+                    <i class="ti-check"></i>
+                    <p> Built-in DMARC, DKIM, SPF and ARC support. </p>
+                  </li>
+                  <li>
+                    <i class="ti-check"></i>
+                    <p> Transport security through DANE and MTA-STS. </p>
+                  </li>
+                  <li>
+                    <i class="ti-check"></i>
+                    <p> Configurable rules and Sieve scripting. </p>
+                  </li>
+                </ul>
+              </div>
+              <p>
+                &nbsp;
+              </p>
+              <a href="/smtp/" data-text=Learn&#32;More class="btn btn-primary">
+                <span>Learn More</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <section class="faq" id="faq">
@@ -343,27 +389,6 @@
                   <div class="body">
                     You can get help from the community by starting a discussion on Github or Discord. You may also
                     become a sponsor and get support directly from Stalwart Labs Ltd.
-                  </div>
-                </div>
-              </div>
-
-              <div class="faq-accordion-item">
-                <div class="header">
-                  <h5 class="mb-0">
-                    <button class="btn btn-link
-                      
-                      
-                      collapsed
-                      " type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false">
-                      Is an SMTP server included?
-                    </button>
-                  </h5>
-                </div>
-
-                <div id="collapseTwo" class="collapse " data-parent="#faqAccordion">
-                  <div class="body">
-                    Not yet, but Stalwart SMTP is currently under active development. Until Stalwart SMTP is released,
-                    we recommend to use Postfix to receive e-mails.
                   </div>
                 </div>
               </div>
@@ -483,6 +508,7 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/jmap">JMAP Server</a></li>
                 <li><a href="/imap">IMAP Server</a></li>
+                <li><a href="/smtp">SMTP Server</a></li>
                 <li><a href="https://stalwartlabs.medium.com/">Blog</a></li>
               </ul>
             </div>

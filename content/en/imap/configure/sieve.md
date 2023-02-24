@@ -7,9 +7,9 @@ draft: false
 images: []
 type: docs
 menu:
-  jmap:
+  imap:
     parent: "configure"
-    identifier: "rate-limit"
+    identifier: "manage-sieve"
 weight: 204
 toc: true
 ---
