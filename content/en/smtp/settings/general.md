@@ -28,6 +28,16 @@ This setting is configured using the server.hostname parameter in the configurat
 hostname = "mx.mydomain.org"
 ```
 
+## Run as user
+
+On Unix/Linux systems, Stalwart SMTP requires the `root` user's privileges to bind to privileged ports. Afterward, these privileges are dropped, and Stalwart SMTP operates using the UID/GID of a non-privileged account. The non-privileged account's UID is configured with the `server.run-as.user` attribute, while the GID is configured with the `server.run-as.group` attribute. For example:
+
+```txt
+[server.run-as]
+user = "stalwart-smtp"
+group = "stalwart-smtp"
+```
+
 ## Default concurrency
 
 The default concurrency defines the maximum number of simultaneous connections that Stalwart SMTP can handle at any given moment. This setting is controlled by the `global.concurrency` parameter in the configuration file:

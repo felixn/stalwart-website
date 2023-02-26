@@ -76,34 +76,32 @@ Table of Contents
   - [Linux / MacOS](/smtp/get-started/linux/)
   - [Windows](/smtp/get-started/windows/)
   - [Docker](/smtp/get-started/docker/)
-- Introduction
+- Configuration
   - Overview
-  - Rules
+  - Configuration Rules
   - Global settings
-  - Remote servers
+  - Remote hosts
   - Databases
-  - Lists
-  - Tracing
-- Inbound configuration
-  - Overview
-  - Listeners + Certificates
-  - Extensions
-  - Connect Stage
-  - Ehlo Stage
-  - Auth Stage
-  - Mail Stage
-  - Rcpt Stage
-  - Data Stage
+  - Local Lists
+  - Tracing & Logging
+- Inbound settings
+  - Listeners
+  - Sessions
+  - EHLO Stage + Extensions
+  - AUTH Stage
+  - MAIL Stage
+  - RCPT Stage
+  - DATA Stage
   - Sieve Scripting
   - Throttling
-- Outbound configuration
+- Outbound settings
   - Overview
   - Schedule
   - Queue strategy
   - Throttling
   - Quotas
   - DNS Resolver
-- Authentication configuration
+- Authentication settings
   - Overview
   - Signatures
   - DKIM
