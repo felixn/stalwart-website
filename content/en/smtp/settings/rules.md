@@ -1,5 +1,5 @@
 ---
-title: "Rules"
+title: "Configuration Rules"
 description: ""
 date: 2022-08-28T12:49:20Z
 lastmod: 2022-08-28T12:49:20Z
@@ -7,7 +7,7 @@ draft: false
 images: []
 type: docs
 menu:
-  jmap:
+  smtp:
     parent: "settings"
     identifier: "rules"
 weight: 202
@@ -64,9 +64,9 @@ CONDITION      = IF_BLOCK / ALL_OF_BLOCK / ANY_OF_BLOCK / NONE_OF_BLOCK
 
 VARIABLE       = <string>
 COMPARATOR     = "eq" / "ne" / "starts-with" / "not-starts-with" / "ends-with" / 
-                 "not-ends-with" "in-list" / "not-in-list" / "regex" / "not-regex" 
+                 "not-ends-with" "in-list" / "not-in-list" / "matches" / "not-matches" 
 CMP_VALUE      = <string> / <number> / IP_CIDR
-IP_CIDR       = <ip_address> ["/" <integer>]
+IP_CIDR        = <ip_address> ["/" <integer>]
 VALUE          = <string> / <number> / <array> / <duration>
 ```
 
@@ -93,7 +93,7 @@ Comparators are functions that evaluate the contents of a variable against a spe
 - `starts-with` / `not-starts-with`: Tests whether a string starts with / does not start with a specified value.
 - `ends-with` / `not-ends-with`: Tests whether a string ends with / does not end with a specified value.
 - `in-list` / `not-in-list`: Tests whether a value is present / not present in a list, remote host or SQL table.
-- `regex` / `not-regex`: Tests whether a value matches a regular expression / does not match a regular expression.
+- `matches` / `not-matches`: Tests whether a value matches a regular expression / does not match a regular expression.
 
 ### Lists
 
@@ -108,7 +108,7 @@ The `in-list` and `not-in-list` comparators determine if the value contained in 
 Variables such as `sender` or `rcpt` that contain string values can be evaluated using any of the value comparators, for instance:
 
 ```txt
-max-recipients = [ { if = "sender", regex-match = "^(.+)@(.+)$", then = 20 },
+max-recipients = [ { if = "sender", matches = "^(.+)@(.+)$", then = 20 },
                    { if = "authenticated-as", starts-with = "john@", then = 1000 },
                    { if = "sender-domain", in-list = "db/postgresql/paid_clients", then = 5000 },
                    { else = 5 } ]

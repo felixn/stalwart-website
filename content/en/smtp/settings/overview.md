@@ -7,7 +7,7 @@ draft: false
 images: []
 type: docs
 menu:
-  jmap:
+  smtp:
     parent: "settings"
     identifier: "overview"
 weight: 201
@@ -21,7 +21,7 @@ TOML, which stands for Tom's Obvious, Minimal Language, is a simple and easy-to-
 
 ## Value types
 
-In the Stalwart SMTP configuration file, settings may expect values in the form of strings, integers, sizes, booleans, IP addresses, durations, rates, or arrays that contain any of these types.
+In the Stalwart SMTP configuration file, settings may expect values in the form of strings, integers, sizes, booleans, IP addresses, durations, rates, lookup paths, or arrays that contain any of these types.
 
 ### Strings
 
@@ -64,7 +64,7 @@ In a TOML file, booleans can be used as values for keys or as elements in arrays
 
 ### Sizes
 
-Sizes are repesented in bytes as positive integers without a decimal point, for example:
+Sizes are represented in bytes as positive integers without a decimal point, for example:
 
 ```txt
 size = 1024
@@ -107,6 +107,22 @@ rate2 = "1 / 1d"  # 1 per day
 ```
 
 In the first example, `20 / 5m` represents a rate of 20 occurrences per 5 minutes. In the second example, `1 / 1d` represents a rate of 1 occurrence per day. The integer value, the `/` symbol, and the duration must be enclosed in quotes or string literals in order to be treated as a string in the TOML file.
+
+### Lookup paths
+
+In the configuration file, certain attributes expect lookup paths as values. These lookup paths are formatted as `<lookup_type>/<lookup_id>[/<lookup_table>]` and refer to local lists, database queries, or remote SMTP, LMTP, or IMAP servers defined within the configuration. The types of lookups that can be used are:
+
+- `list`: Refers to a local [list](/settings/list) containing values.
+- `db`: Refers to a query in a [database](/settings/database).
+- `remote`: Refers to a [remote](/settings/remote) SMTP, LMTP, or IMAP server.
+
+Some examples of lookup paths are:
+
+```txt
+auth = "db/production_db/paid_clients"
+addresses = "remote/lmtp"
+domains = "list/local_domains"
+```
 
 ### Arrays
 

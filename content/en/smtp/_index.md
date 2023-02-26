@@ -112,9 +112,6 @@ Table of Contents
   - DMARC
   - IpRev
   - DNSBL
-- Global configuration
-  - Overview
-
 - Management
   - Overview
   - Configuration

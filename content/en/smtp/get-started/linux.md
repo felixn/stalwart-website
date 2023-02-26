@@ -32,15 +32,15 @@ perform a manual installation.
 
 ## Set up
 
-The installating script will ask you to enter your server's fully-qualified domain-name (FQDN), your domain name (you can add more domains later)
+The installation script will ask you to enter your server's fully-qualified domain-name (FQDN), your domain name (you can add more domains later)
 and the administrator's password (used by the management REST API). Additionally you'll have to provide the address and port to use to deliver 
 messages to your message store (e.g.: Stalwart JMAP, Dovecot, Courier-IMAP, etc.) over the LMTP protocol:
 
 ```txt
 Enter the SMTP server's hostname [mx.yourdomain.org]: mx.mydomain.org
 Enter your domain name [yourdomain.org]: mydomain.org
-Enter the SMTP server's admininstrator password [changeme]: my_secret_pass
-Enter your LMTP server's hostame [localhost]: localhost
+Enter the SMTP server's administrator password [changeme]: my_secret_pass
+Enter your LMTP server's hostname [localhost]: localhost
 Enter your LMTP server's port [24]: 24
 ```
 
