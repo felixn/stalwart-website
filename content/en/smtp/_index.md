@@ -87,11 +87,11 @@ Table of Contents
 - Inbound settings
   - Listeners
   - Sessions
-  - EHLO Stage + Extensions
-  - AUTH Stage
+  - EHLO Stage
   - MAIL Stage
   - RCPT Stage
   - DATA Stage
+  - AUTH Stage
   - Sieve Scripting
   - Throttling
 - Outbound settings
