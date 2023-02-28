@@ -92,15 +92,16 @@ Table of Contents
   - RCPT Stage
   - DATA Stage
   - AUTH Stage
+  - DNSBLs
   - Sieve Scripting
   - Throttling
 - Outbound settings
-  - Overview
-  - Schedule
-  - Queue strategy
+  - Queues
+  - Transport & Routing
+  - TLS Security
   - Throttling
   - Quotas
-  - DNS Resolver
+  - DNS
 - Authentication settings
   - Overview
   - Signatures
@@ -109,7 +110,7 @@ Table of Contents
   - ARC
   - DMARC
   - IpRev
-  - DNSBL
+  - Reports
 - Management
   - Overview
   - Configuration

@@ -10,13 +10,13 @@ menu:
   smtp:
     parent: "inbound"
     identifier: "sieve"
-weight: 308
+weight: 309
 toc: true
 ---
 
 ## Overview
 
-Sieve is a scripting language used to filter and modify email messages. It provides a flexible and powerful way to manage email messages by automatically filtering, sorting, and transforming them based on a wide range of criteria.  Rather than relying on a proprietary DSL, Stalwart SMTP uses Sieve as its default scripting language primarily because it is sufficiently powerful to handle most filtering tasks and is an established internet standard (RFC 5228).
+Sieve is a scripting language used to filter and modify email messages. It provides a flexible and powerful way to manage email messages by automatically filtering, sorting, and transforming them based on a wide range of criteria.  Rather than relying on a proprietary DSL, Stalwart SMTP uses Sieve as its default scripting language primarily because it is sufficiently powerful to handle most filtering tasks and is an established [internet standard](https://www.rfc-editor.org/rfc/rfc5228.html).
 
 A typical Sieve script consists of one or more rules, each consisting of a test and an action. The test checks a specific attribute of the message, such as the sender's address or the subject line, while the action specifies what to do with the message if it matches the test. This manual does not cover how to write Sieve scripts but tutorials and examples can be found at [https://sieve.info](https://sieve.info).
 
@@ -35,6 +35,27 @@ script_one = '''
 '''
 script_two = "file:///usr/local/stalwart-smtp/etc/sieve/my-script.sieve"
 ```
+
+## Context Variables
+
+Sieve scripts executed in Stalwart SMTP have access to the following environment variables:
+
+- `env.remote_ip`: The email client's IP address.
+- `env.helo_domain`: The domain name used in the EHLO/LHLO command.
+- `env.authenticated_as`: The account name used for authentication.
+
+The envelope contents can be accessed using the [envelope test](https://www.rfc-editor.org/rfc/rfc5228.html#page-27) or through variables:
+
+- `envelope.from`: The return path specified in the `MAIL FROM` command.
+- `envelope.to`: The recipient address specified in the last `RCPT TO` command.
+- `envelope.notify`: The `NOTIFY` extension parameters.
+- `envelope.orcpt`: The `ORCPT` value specified with the DSN extension.
+- `envelope.ret`: The `RET` value specified with the DSN extension.
+- `envelope.envid`: The `ENVID` value specified with the DSN extension.
+- `envelope.by_time_absolute`: The specified absolute time in the `DELIVERBY` extension.
+- `envelope.by_time_relative`: The specified relative time in the `DELIVERBY` extension.
+- `envelope.by_mode`: The mode specified with the `DELIVERBY` extension.
+- `envelope.by_trace`: The trace settings specified with the `DELIVERBY` extension.
 
 ## Runtime Settings
 
@@ -74,10 +95,37 @@ nested-includes = 5
 duplicate-expiry = "7d"
 ```
 
-## Executing extension
+## Execute extension
 
-Stalwart SMTP adds to the Sieve language the `vnd.stalwart.execute` extensions which allows scripts to execute external commands or SQL queries using the `execute` command. The `execute` command expects as arguments the command or query name followed by the arguments list. `execute` can be used also as a test.
+Stalwart SMTP adds to the Sieve language the `vnd.stalwart.execute` extension which allows scripts to execute external commands or SQL queries using the `execute` command (and test). The `execute` command/test expects as arguments the command or query name followed by the command arguments or query values.
 
+### SQL queries
+
+The `:query` tag is used to execute an SQL query on the server defined in the `sieve.use-database` attribute, for example:
+
+```sieve
+require ["vnd.stalwart.execute", "variables", "envelope", "reject"];
+
+set "triplet" "${env.remote_ip}.${envelope.from}.${envelope.to}";
+
+if not execute :query "SELECT EXISTS(SELECT 1 FROM greylist WHERE addr=? LIMIT 1)" ["${triplet}"] {
+    execute :query "INSERT INTO greylist (addr) VALUES (?)" ["${triplet}"];
+    reject "422 4.2.2 Greylisted, please try again in a few moments.";
+}
+```
+
+### External programs
+
+The `:binary` tag is used to execute external binaries, for example:
+
+```sieve
+require "vnd.stalwart.execute";
+
+if execute :binary "/usr/local/stalwart/bin/validate.sh" ["${env.remote_ip}", "${envelope.from}"] {
+    reject "You are not allowed to send e-mails.";
+}
+
+```
 
 ## Supported extensions
 

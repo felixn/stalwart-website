@@ -29,7 +29,7 @@ SASL authentication is configured using the following attributes which are avail
 - `errors.total`: The maximum number of authentication errors allowed before the session is disconnected.
 - `errors.wait`: The time interval to wait after an authentication failure.
 
-Example:
+Example using an external IMAP server for authentication:
 
 ```txt
 [session.auth]
@@ -43,4 +43,20 @@ require = [ { if = "listener", ne = "smtp", then = true},
 [session.auth.errors]
 total = 3
 wait = "5s"
+
+[remote."imap"]
+address = "localhost"
+port = 143
+protocol = "imap"
+concurrency = 10
+timeout = "1m"
+lookup = true
+
+[remote."imap".cache]
+entries = 1000
+ttl = {positive = "1d", negative = "1h"}
+
+[remote."imap".tls]
+implicit = false
+allow-invalid-certs = true
 ```
