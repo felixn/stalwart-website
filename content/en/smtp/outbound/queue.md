@@ -18,7 +18,7 @@ toc: true
 
 Queues are essentially a holding area for outbound messages in an SMTP server. When a message arrives, it is placed in the queue until it can be delivered to its final destination. Stalwart SMTP supports an unlimited number of virtual queues, which means that a system administrator can create and configure multiple queues with different settings and behaviors. This allows for a high degree of flexibility and customization in managing incoming messages. For example, different queues can be created for different types of messages, such as messages from high-priority senders or messages with specific content, and these queues can be processed differently, such as by assigning more resources or prioritizing delivery.
 
-## Settings
+## Queue Path
 
 Queued messages that are waiting to be delivered are stored in the file system. The path to the message queue is specified with the `queue.path` attribute. It is also possible to hash the queued messages under multiple sub-folders by specifying a hash value in the `queue.hash` attribute.
 
@@ -28,6 +28,17 @@ Example:
 [queue]
 path = "/usr/local/stalwart-smtp/queue"
 hash = 64
+```
+
+[DKIM](/smtp/auth/dkim), [SPF](/smtp/auth/spf), [DMARC](/smtp/auth/dmarc) and [TLS](/smtp/outbound/tls) reports queued for delivery are stored in a different location which is specified with the `report.path` attribute. Just like with the message queue, it is possible to hash the queued reports under multiple sub-folders by specifying a hash value in the `report.hash` attribute. Additionally, the report submitter address can be configured using the `report.submitter` attribute or left blank to use the value specified in `server.hostname`.
+
+Example:
+
+```txt
+[report]
+path = "/usr/local/stalwart-smtp/reports"
+hash = 64
+submitter = "mx.foobar.org"
 ```
 
 ## Schedule

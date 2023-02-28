@@ -29,17 +29,14 @@ Key features:
 - Inbound Filtering and Throttling:
   - Sieve scripting language with support for all [registered extensions](https://www.iana.org/assignments/sieve-extensions/sieve-extensions.xhtml).
   - Filtering, modification and removal of MIME parts or headers.
-  - DNS block lists (**DNSBL**).
-  - Greylisting.
-  - Inbound concurrency and rate limiting.
+  - DNS block lists (**DNSBL**) & Greylisting.
+  - Inbound concurrency & rate limiting.
   - Integration with external content filtering systems such as SpamAssassin and ClamAV.
 - Flexible Queues:
-  - Unlimited virtual queues.
+  - Unlimited virtual queues with custom routing rules.
   - Delayed delivery with `FUTURERELEASE` and `DELIVERBY` extensions support.
   - Priority delivery with `MT-PRIORITY` extension support.
-  - Quotas.
-  - Outbound throttling.
-  - Custom routing rules.
+  - Outbound throttling & Disk quotas.
 - Logging and Reporting:
   - Detailed logging of SMTP transactions and events, including delivery attempts, errors, and policy violations.
   - Integration with **OpenTelemetry** to enable monitoring, tracing, and performance analysis of SMTP server operations.
@@ -102,15 +99,15 @@ Table of Contents
   - Throttling
   - Quotas
   - DNS
-- Authentication settings
+- Email Authentication
   - Overview
   - Signatures
   - DKIM
   - SPF
   - ARC
   - DMARC
-  - IpRev
-  - Reports
+  - Reverse IP
+  - Report Analysis
 - Management
   - Overview
   - Configuration
