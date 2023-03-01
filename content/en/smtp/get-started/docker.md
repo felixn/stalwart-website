@@ -48,6 +48,7 @@ Once you have completed the above steps, execute in your terminal:
 ```bash
 docker run -d -ti -p 25:25 -p 465:495 -p 587:587 -p 8686:8686 \
            -v <BASE_PATH>:/usr/local/stalwart-smtp \
+           --name stalwart-smtp stalwartlabs/smtp-server:latest \
            --config /usr/local/stalwart-smtp/etc/config.toml
 ```
 
