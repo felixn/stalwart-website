@@ -32,7 +32,7 @@ cargo test
 
 ## IMAP4 tests
 
-The IMAP test suite performs a full server functionaly test including compliance to the IMAP4rev2/rev1
+The IMAP test suite performs a full server functionality test including compliance to the IMAP4rev2/rev1
 protocols and its extensions. To run these tests a blank Stalwart JMAP installation is required to be running at
 ``http://127.0.0.1:8080``.
 

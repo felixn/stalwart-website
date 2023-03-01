@@ -36,7 +36,7 @@ verify = [ { if = "listener", eq = "smtp", then = "relaxed" },
 
 ## Reporting
 
-Stalwart SMTP [automatically analyzes](/smtp/auth/reports) received DMARC failure and aggregate reports from external hosts and can also generate its own DMARC reports to inform other hosts about the authentication outcomes of the DKIM signatures and SPF policies it has processed.
+Stalwart SMTP [automatically analyzes](/smtp/auth/analysis) received DMARC failure and aggregate reports from external hosts and can also generate its own DMARC reports to inform other hosts about the authentication outcomes of the DKIM signatures and SPF policies it has processed.
 
 ### Failures
 

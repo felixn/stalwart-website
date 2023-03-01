@@ -97,7 +97,7 @@ Comparators are functions that evaluate the contents of a variable against a spe
 
 ### Lists
 
-The `in-list` and `not-in-list` comparators determine if the value contained in the variable is present or absent in a specified list. Lists can be either [local]() or refer to a [database]() or [remote]() SMTP/LMTP host, and have the following syntax:
+The `in-list` and `not-in-list` comparators determine if the value contained in the variable is present or absent in a specified list. Lists can be either [local](/smtp/settings/list) or refer to a [database](/smtp/settings/database) or [remote](/smtp/settings/remote) SMTP/LMTP host, and have the following syntax:
 
 - `list/LIST_NAME`: Returns true if the value is present in the local list defined in the configuration file. For example, `list/domains` uses the `domains` list.
 - `db/DB_NAME/QUERY_NAME`: Executes a query on the specified database and returns true if the query is successful. For example, `db/postgresql/is_blocked` executes the `is_blocked` query on the `postgresql` database.

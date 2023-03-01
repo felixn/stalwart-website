@@ -54,7 +54,7 @@ The connection limits for a remote host can be set through the following paramet
 
 Lookups allow the utilization of a remote host for user authentication, mailbox validation, address verification, mailing list expansion, and address existence checking in rules using the `in-list` comparator. By default, lookups are disabled for remote hosts, but can be enabled by setting the `remote.<id>.lookup` parameter to `true`.
 
-When the `lookup` setting is enabled for a remote IMAP host, it can be utilized for user authentication purposes. For remote LMTP or SMTP hosts with `lookup` enabled, the server can be employed for recipient validation (`RCPT TO`), authentication (`AUTH`), address verification (`VRFY`), list expansion (`EXPN`), as well as in [rules](/settings/rules) using the `in-list = "remote/<id>"` comparator.
+When the `lookup` setting is enabled for a remote IMAP host, it can be utilized for user authentication purposes. For remote LMTP or SMTP hosts with `lookup` enabled, the server can be employed for recipient validation (`RCPT TO`), authentication (`AUTH`), address verification (`VRFY`), list expansion (`EXPN`), as well as in [rules](/smtp/settings/rules) using the `in-list = "remote/<id>"` comparator.
 
 ### Caching
 

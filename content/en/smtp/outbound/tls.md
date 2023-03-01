@@ -9,7 +9,7 @@ type: docs
 menu:
   smtp:
     parent: "outbound"
-    identifier: "security"
+    identifier: "tls"
 weight: 403
 toc: true
 ---
@@ -75,7 +75,7 @@ starttls = "require"
 
 TLS Reporting is a mechanism for reporting on the certificate validation outcomes performed by a mail transfer agent (MTA), such as Stalwart SMTP. It allows the recipient of an email to receive reports on the validity of the certificate used to secure the transport of the email, including information such as whether the certificate was valid, expired, or revoked. The goal of TLS Reporting is to provide a way to detect and address security issues with the certificates used to secure email communication, to ensure that email communication is secure and trustworthy. The reports can also be used to identify and correct misconfigurations of the sending MTA, and to improve the overall security of email communication.
 
-Stalwart SMTP [automatically analyzes](/smtp/auth/reports) TLS reports received from external hosts and can also generate aggregate reports to inform other hosts about the results of TLS validation. Outgoing TLS reports are configured under the `report.tls.aggregate` key using the following options:
+Stalwart SMTP [automatically analyzes](/smtp/auth/analysis) TLS reports received from external hosts and can also generate aggregate reports to inform other hosts about the results of TLS validation. Outgoing TLS reports are configured under the `report.tls.aggregate` key using the following options:
 
 - `from-name`: The name that will be used in the `From` header of the TLS report email.
 - `from-address`: The email address that will be used in the `From` header of the TLS report email.

@@ -9,10 +9,10 @@ images: []
 type: docs
 ---
 
-## Stalwart JMAP Server
+## Stalwart SMTP Server
 
 Stalwart SMTP is a modern SMTP server developed in Rust with a focus on security, speed, and extensive configurability. 
-It features built-in DMARC, DKIM, SPF and ARC support for message and sender authentication, strong transport security through DANE, MTA-STS, SMTP TLS reporting and offers great flexibility and customization thanks to its configurable rules and native support for Sieve scripts.
+It features built-in DMARC, DKIM, SPF and ARC support for message authentication, strong transport security through DANE, MTA-STS and SMTP TLS reporting, and offers great flexibility and customization thanks to its dynamic configuration rules and native support for Sieve scripts.
 
 Key features:
 
@@ -74,45 +74,43 @@ Table of Contents
   - [Windows](/smtp/get-started/windows/)
   - [Docker](/smtp/get-started/docker/)
 - Configuration
-  - Overview
-  - Configuration Rules
-  - Global settings
-  - Remote hosts
-  - Databases
-  - Local Lists
-  - Tracing & Logging
+  - [Overview](/smtp/settings/overview)
+  - [Configuration Rules](/smtp/settings/rules)
+  - [General settings](/smtp/settings/general)
+  - [Remote hosts](/smtp/settings/remote)
+  - [Databases](/smtp/settings/database)
+  - [Local Lists](/smtp/settings/list)
+  - [Tracing & Logging](/smtp/settings/tracing)
 - Inbound settings
-  - Listeners
-  - Sessions
-  - EHLO Stage
-  - MAIL Stage
-  - RCPT Stage
-  - DATA Stage
-  - AUTH Stage
-  - DNSBLs
-  - Sieve Scripting
-  - Throttling
+  - [Listeners](/smtp/inbound/listeners)
+  - [Sessions](/smtp/inbound/session)
+  - [EHLO Stage](/smtp/inbound/ehlo)
+  - [MAIL Stage](/smtp/inbound/mail)
+  - [RCPT Stage](/smtp/inbound/rcpt)
+  - [DATA Stage](/smtp/inbound/data)
+  - [AUTH Stage](/smtp/inbound/auth)
+  - [DNSBLs](/smtp/inbound/dnsbl)
+  - [Sieve Scripting](/smtp/inbound/sieve)
+  - [Throttling](/smtp/inbound/throttle)
 - Outbound settings
-  - Queues
-  - Transport & Routing
-  - TLS Security
-  - Throttling
-  - Quotas
-  - DNS
+  - [Queues](/smtp/outbound/queue)
+  - [Transport & Routing](/smtp/outbound/transport)
+  - [TLS Security](/smtp/outbound/tls)
+  - [Throttling](/smtp/outbound/throttle)
+  - [Quotas](/smtp/outbound/quota)
+  - [DNS](/smtp/outbound/dns)
 - Email Authentication
-  - Overview
-  - Signatures
-  - DKIM
-  - SPF
-  - ARC
-  - DMARC
-  - Reverse IP
-  - Report Analysis
+  - [DKIM](/smtp/auth/dkim)
+  - [SPF](/smtp/auth/spf)
+  - [ARC](/smtp/auth/arc)
+  - [DMARC](/smtp/auth/dmarc)
+  - [Reverse IP](/smtp/auth/iprev)
+  - [Report Analysis](/smtp/auth/analysis)
 - Management
-  - Overview
-  - Configuration
-  - Queue
-  - Reports
+  - [API](/smtp/management/api)
+  - [CLI](/smtp/management/cli)
+  - [Queue](/smtp/management/queue)
+  - [Reports](/smtp/management/reports)
 - Development
   - [Compiling](/smtp/development/compile/)
   - [Tests](/smtp/development/test/)

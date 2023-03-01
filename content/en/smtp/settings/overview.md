@@ -112,9 +112,9 @@ In the first example, `20 / 5m` represents a rate of 20 occurrences per 5 minute
 
 In the configuration file, certain attributes expect lookup paths as values. These lookup paths are formatted as `<lookup_type>/<lookup_id>[/<lookup_table>]` and refer to local lists, database queries, or remote SMTP, LMTP, or IMAP servers defined within the configuration. The types of lookups that can be used are:
 
-- `list`: Refers to a local [list](/settings/list) containing values.
-- `db`: Refers to a query in a [database](/settings/database).
-- `remote`: Refers to a [remote](/settings/remote) SMTP, LMTP, or IMAP server.
+- `list`: Refers to a local [list](/smtp/settings/list) containing values.
+- `db`: Refers to a query in a [database](/smtp/settings/database).
+- `remote`: Refers to a [remote](/smtp/settings/remote) SMTP, LMTP, or IMAP server.
 
 Some examples of lookup paths are:
 

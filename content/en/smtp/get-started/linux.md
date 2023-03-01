@@ -72,7 +72,7 @@ Type: TXT
 TTL: 86400
 ```
 
-If you already have a DKIM certificate simply ignore these instructions and refer to the [DKIM](/auth/dkim) section for instructions on how to add a new DKIM signature.
+If you already have a DKIM certificate simply ignore these instructions and refer to the [DKIM](/smtp/auth/dkim) section for instructions on how to add a new DKIM signature.
 
 ## Restart service
 
@@ -90,6 +90,6 @@ sudo launchctl kickstart -k stalwart.smtp
 
 ## Next steps
 
-Now that you have Stalwart SMTP up and running, you may want to enable [SASL authentication]() using
+Now that you have Stalwart SMTP up and running, you may want to enable [SASL authentication](/smtp/inbound/auth) using
 your IMAP4 server or SQL database.
 

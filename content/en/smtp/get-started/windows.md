@@ -47,7 +47,7 @@ copy mykey.key C:\Program Files\Stalwart SMTP\etc\private\tls.key
 ### DKIM
 
 DomainKeys Identified Mail (DKIM) is a method of email authentication that allows a receiving email server to verify that an email message was actually sent by the owner of the domain from which it appears to have been sent. It is highly recommended that you enable DKIM (as well as SPF and DMARC) for your domain.
-Please refer to the [DKIM](/auth/dkim) section for instructions on how to add a new DKIM signature.
+Please refer to the [DKIM](/smtp/auth/dkim) section for instructions on how to add a new DKIM signature.
 
 ## Start service
 
@@ -70,6 +70,6 @@ If everything is correct, you should now be able to connect to Stalwart SMTP on 
 
 ## Next steps
 
-Now that you have Stalwart SMTP up and running, you may want to enable [SASL authentication]() using
+Now that you have Stalwart SMTP up and running, you may want to enable [SASL authentication](/smtp/inbound/auth) using
 your IMAP4 server or SQL database.
 

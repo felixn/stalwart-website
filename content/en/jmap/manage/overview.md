@@ -23,7 +23,7 @@ tool to manage a Stalwart JMAP server.
 
 ## Installation
 
-The CLI tool should be aleady installed on the server where Stalwart JMAP server is running at 
+The CLI tool should be already installed on the server where Stalwart JMAP server is running at 
 ``/usr/local/stalwart-jmap/bin/stalwart-cli``. 
 If you would like to install the CLI on a different computer, follow the instructions for 
 your platform below:
@@ -31,7 +31,7 @@ your platform below:
 - **Linux / MacOS**: 
 
     ```bash
-    curl --proto '=https' --tlsv1.2 -sSf https://jmap-cli.stalw.art/install.sh | sh
+    curl --proto '=https' --tlsv1.2 -sSf https://cli.stalw.art/install.sh | sh
     ```
     Once the installation is completed, the CLI tool will be available in your home directory at ``$HOME/.stalwart/stalwart-cli``. You may add the
     ``$HOME/.stalwart`` directory to your ``PATH`` environment variable or move the ``stalwart-cli`` binary to a location that is already
@@ -39,7 +39,7 @@ your platform below:
 
 - **Windows**: 
   
-    Download the CLI tool directly from [here](https://github.com/stalwartlabs/jmap-server-cli/releases/latest/download/stalwart-cli-x86_64-pc-windows-msvc.zip).
+    Download the CLI tool directly from [here](https://github.com/stalwartlabs/cli/releases/latest/download/stalwart-cli-x86_64-pc-windows-msvc.zip).
 
 ## Usage
 
@@ -49,24 +49,25 @@ when installed manually). When executed without any parameters, the CLI tool pri
 ```bash
 $ stalwart-cli
 
-Stalwart JMAP Server CLI
+Stalwart Mail Server CLI
 
-USAGE:
-    stalwart-cli [OPTIONS] --url <URL> <SUBCOMMAND>
+Usage: stalwart-cli [OPTIONS] --url <URL> <COMMAND>
 
-OPTIONS:
-    -c, --credentials <CREDENTIALS>    Authentication credentials
-    -h, --help                         Print help information
-    -u, --url <URL>                    JMAP server base URL
-    -V, --version                      Print version information
+Commands:
+  account  Manage user accounts
+  domain   Manage domains
+  list     Manage mailing lists
+  group    Manage groups
+  import   Import accounts and domains
+  queue    Manage SMTP message queue
+  report   Manage SMTP DMARC/TLS report queue
+  help     Print this message or the help of the given subcommand(s)
 
-SUBCOMMANDS:
-    account    Manage user accounts
-    domain     Manage domains
-    group      Manage groups
-    help       Print this message or the help of the given subcommand(s)
-    import     Import accounts and domains
-    list       Manage mailing lists
+Options:
+  -u, --url <URL>                  JMAP or SMTP server base URL
+  -c, --credentials <CREDENTIALS>  Authentication credentials
+  -h, --help                       Print help
+  -V, --version                    Print version
 ```
 
 The CLI tool expects two required arguments: the base URL of your Stalwart JMAP server (which is 
@@ -88,7 +89,7 @@ preferable to authenticate using OAuth.
 
 ### OAuth
 
-To use OAuth authentication, run the ``stalwart-cli`` command ommitting the ``-c`` option. The CLI tool
+To use OAuth authentication, run the ``stalwart-cli`` command omitting the ``-c`` option. The CLI tool
 will then ask at the prompt if you would like to authenticate using OAuth:
 
 ```bash
