@@ -23,7 +23,7 @@ Before you can run the Stalwart SMTP Docker container, you will have to create t
     - ``__HOST__`` with your SMTP server's fully-qualified domain name, for example "mx.mydomain.org".
     - ``__DOMAIN__`` with your main domain name, for example "mydomain.org".
     - ``__ADMIN_PASS__`` with the administrator password to use to manage Stalwart SMTP.
-    - ``__LMTP_HOST__`` and ``__LMTP_HOST__`` with the address and port to use to deliver messages to your message store (e.g.: Stalwart JMAP, Dovecot, Courier-IMAP, etc.) over the LMTP protocol.
+    - ``__LMTP_HOST__`` and ``__LMTP_PORT__`` with the address and port to use to deliver messages to your message store (e.g.: Stalwart JMAP, Dovecot, Courier-IMAP, etc.) over the LMTP protocol.
 
 ### TLS
 
