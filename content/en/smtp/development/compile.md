@@ -43,7 +43,13 @@ cd smtp-server
 
 ## Compile
 
-Compile Stalwart SMTP by executing:
+Install `protoc`:
+
+```
+sudo apt-get install protobuf-compiler
+```
+
+And then compile Stalwart SMTP by executing:
 
 ```
 cargo build --release
