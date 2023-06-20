@@ -63,7 +63,7 @@ is running or any other computer with internet access to your server:
 - **Linux / MacOS**: 
 
     ```bash
-    curl --proto '=https' --tlsv1.2 -sSf https://jmap-cli.stalw.art/install.sh | sh
+    curl --proto '=https' --tlsv1.2 -sSf https://cli.stalw.art/install.sh | sh
     ```
     Once the installation is completed, the CLI tool will be available in your home directory at ``$HOME/.stalwart/stalwart-cli``. You may add the
     ``$HOME/.stalwart`` directory to your ``PATH`` environment variable or move the ``stalwart-cli`` binary to a location that is already
